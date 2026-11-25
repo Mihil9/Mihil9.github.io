@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mihil | Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1F4; --ink:#14233B; --muted:#4A5B73; --grid:#CBD5E1; --accent:#1F5FD6; --accent-ink:#fff; --card:#F7F9FB;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0F1826;--ink:#E6ECF5;--muted:#9AAAC0;--grid:#24344C;--accent:#6FA3FF;--accent-ink:#0F1826;--card:#152236;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#0F1826;--ink:#E6ECF5;--muted:#9AAAC0;--grid:#24344C;--accent:#6FA3FF;--accent-ink:#0F1826;--card:#152236;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:1.125rem;line-height:1.6;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:48px 48px;background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:var(--paper);opacity:.82;pointer-events:none;z-index:-1}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3,.sans{font-family:"Archivo","Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;font-family:"Archivo",Arial,sans-serif;font-weight:600;font-size:.95rem}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:center;padding:3rem 0 4rem}
+h1{font-size:clamp(3.2rem,9vw,6.5rem);line-height:.92;margin:0 0 1.25rem;font-weight:800;font-stretch:80%;letter-spacing:-.02em}
+.lede{max-width:34rem;color:var(--muted);margin:0 0 1.5rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:.75rem 1.4rem;border-radius:4px;font-family:"Archivo",Arial,sans-serif;font-weight:700;text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:.5rem}
+.plot{background:var(--card);border:2px solid var(--ink);padding:1rem}
+.plot svg{width:100%;height:auto;display:block}
+.plot .t{font-family:"Archivo",Arial,sans-serif;font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}
+.plot label{display:flex;gap:.75rem;align-items:center;font-family:"Archivo",Arial,sans-serif;font-size:.9rem;margin-top:.75rem}
+.plot input{flex:1;accent-color:var(--accent)}
+.curve{fill:none;stroke:var(--accent);stroke-width:3;stroke-linejoin:round}
+.ref{stroke:var(--muted);stroke-dasharray:5 5;stroke-width:1.5}
+.ax{stroke:var(--ink);stroke-width:1.5}
+.tick{fill:var(--muted);font:12px "Archivo",Arial,sans-serif}
+section{padding:3rem 0}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-stretch:85%;margin:0 0 1.5rem;letter-spacing:-.01em}
+.proj{display:grid;grid-template-columns:1fr 15rem;gap:1.5rem;border:2px solid var(--ink);background:var(--card);margin-bottom:1.25rem}
+.proj>div{padding:1.5rem}
+.proj h3{margin:0 0 .5rem;font-size:1.5rem;font-stretch:90%}
+.proj p{margin:0 0 .75rem}
+.meta{border-left:2px solid var(--ink);font-family:"Archivo",Arial,sans-serif;font-size:.9rem;margin:0;padding:0}
+.meta div{padding:.75rem 1.25rem;border-bottom:1px solid var(--grid)}
+.meta div:last-child{border-bottom:0}
+.meta dt{color:var(--muted);font-size:.8rem}
+.meta dd{margin:0;font-weight:600}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.skills{list-style:none;padding:0;margin:0;font-family:"Archivo",Arial,sans-serif}
+.skills li{display:flex;justify-content:space-between;border-bottom:1px solid var(--grid);padding:.6rem 0}
+.skills span:last-child{color:var(--muted)}
+footer{border-top:2px solid var(--ink);margin-top:2rem;padding:2rem 0 3rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:"Archivo",Arial,sans-serif;font-size:.95rem}
+@media (max-width:760px){
+  .hero,.about,.proj{grid-template-columns:1fr}
+  .meta{border-left:0;border-top:2px solid var(--ink)}
+  nav ul{gap:1rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <span>Mihil</span>
+    <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Mihil</h1>
+      <p class="lede">Engineering student at Embry-Riddle Aeronautical University. I model vehicles and control systems in MATLAB and Simulink, then explain the results clearly to people who weren’t in the room.</p>
+      <a class="btn" href="#work">See my projects</a><a class="btn alt" href="#contact">Get in touch</a>
+    </div>
+    <figure class="plot" style="margin:0">
+      <div class="t"><span>Step response of a second-order system</span><span id="stats"></span></div>
+      <svg id="chart" viewBox="0 0 400 240" role="img" aria-label="Step response curve that changes with damping ratio"></svg>
+      <label>Damping ratio <input id="z" type="range" min="0.1" max="1.2" step="0.05" value="0.35" aria-label="Damping ratio"><output id="zv">0.35</output></label>
+    </figure>
+  </header>
+
+  <section id="work">
+    <h2>Selected work</h2>
+
+    <article class="proj">
+      <div>
+        <h3>Hybrid electric vehicle model</h3>
+        <p>Simulink model of a hybrid powertrain covering component sizing, controller tuning, and fuel economy over standard drive cycles.</p>
+        <p>Replace this text with your main result, such as the mpg improvement, and what you would change next.</p>
+        <a href="#">Read the report</a>
+      </div>
+      <dl class="meta">
+        <div><dt>Tools</dt><dd>MATLAB, Simulink</dd></div>
+        <div><dt>Type</dt><dd>Course project</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+      </dl>
+    </article>
+
+    <article class="proj">
+      <div>
+        <h3>Shaft design and analysis</h3>
+        <p>Design of a loaded shaft for MECH 304, including stress and fatigue calculations and a formal engineering report.</p>
+        <p>Replace this text with the loading case, the safety factor you reached, and the design decision that mattered most.</p>
+        <a href="#">View the calculations</a>
+      </div>
+      <dl class="meta">
+        <div><dt>Tools</dt><dd>Hand calcs, MATLAB</dd></div>
+        <div><dt>Type</dt><dd>Team project</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+      </dl>
+    </article>
+
+    <article class="proj">
+      <div>
+        <h3>Technical presentations</h3>
+        <p>Speeches and slide decks that turn engineering results into a clear story for non-specialist audiences.</p>
+        <p>Replace this text with a topic, an audience, and a link to slides or a recording.</p>
+        <a href="#">Watch or download</a>
+      </div>
+      <dl class="meta">
+        <div><dt>Tools</dt><dd>Slides, public speaking</dd></div>
+        <div><dt>Type</dt><dd>Coursework</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+      </dl>
+    </article>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <div>
+        <p>I study engineering at Embry-Riddle in Florida. My favorite work sits between simulation and the real thing: building a model, checking it against what physics says should happen, and fixing it when they disagree.</p>
+        <p>Add two or three sentences about what you want to do next, such as an internship, a research area, or a role.</p>
+      </div>
+      <ul class="skills" aria-label="Skills">
+        <li><span>MATLAB and Simulink</span><span>Modeling, simulation</span></li>
+        <li><span>Vehicle dynamics</span><span>Powertrain, performance</span></li>
+        <li><span>Technical writing</span><span>Reports, documentation</span></li>
+        <li><span>Public speaking</span><span>Presentations</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <span>Email: <a href="mailto:you@example.com">you@example.com</a></span>
+    <span><a href="#">LinkedIn</a> and <a href="#">GitHub</a></span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var svg=document.getElementById('chart'),z=document.getElementById('z'),zv=document.getElementById('zv'),stats=document.getElementById('stats');
+  var W=400,H=240,L=36,R=10,T=14,B=28,TMAX=12,YMAX=1.8,first=true;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function X(t){return L+(W-L-R)*t/TMAX}
+  function Y(y){return T+(H-T-B)*(1-y/YMAX)}
+  function resp(t,d){
+    if(d>=1){var s=Math.sqrt(d*d-1),a=-d+s,b=-d-s;return 1-(b*Math.exp(a*t)-a*Math.exp(b*t))/(b-a)}
+    var wd=Math.sqrt(1-d*d);return 1-Math.exp(-d*t)*(Math.cos(wd*t)+d/wd*Math.sin(wd*t))
+  }
+  function draw(){
+    var d=parseFloat(z.value),pts=[],peak=0,i,t,y;
+    for(i=0;i<=240;i++){t=TMAX*i/240;y=resp(t,d);if(y>peak)peak=y;pts.push((i?'L':'M')+X(t).toFixed(1)+' '+Y(y).toFixed(1))}
+    var os=Math.max(0,(peak-1)*100);
+    var g='<line class="ax" x1="'+L+'" y1="'+Y(0)+'" x2="'+(W-R)+'" y2="'+Y(0)+'"/><line class="ax" x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+Y(0)+'"/>';
+    g+='<line class="ref" x1="'+L+'" y1="'+Y(1)+'" x2="'+(W-R)+'" y2="'+Y(1)+'"/>';
+    g+='<text class="tick" x="'+(L-6)+'" y="'+(Y(1)+4)+'" text-anchor="end">1</text><text class="tick" x="'+(L-6)+'" y="'+(Y(0)+4)+'" text-anchor="end">0</text>';
+    g+='<text class="tick" x="'+(W-R)+'" y="'+(H-8)+'" text-anchor="end">time</text>';
+    g+='<path class="curve" id="c" d="'+pts.join(' ')+'"/>';
+    svg.innerHTML=g;zv.textContent=d.toFixed(2);
+    stats.textContent='Overshoot '+os.toFixed(0)+'%';
+    if(first&&!reduce){
+      var c=document.getElementById('c'),len=c.getTotalLength();
+      c.style.strokeDasharray=len;c.style.strokeDashoffset=len;
+      c.getBoundingClientRect();
+      c.style.transition='stroke-dashoffset 1.6s ease-out';c.style.strokeDashoffset=0;
+    }
+    first=false;
+  }
+  z.addEventListener('input',draw);draw();
+})();
+</script>
+</body>
+</html>
